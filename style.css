@@ -1,15 +1,10 @@
 /* style.css */
 
-/* 
-  Mobile: 375px
-  Desktop: 1440px
-*/
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
 
 /* font-family: 'Inter', sans-serif; */
 
-@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap");
 
 /* font-family: 'Lexend Deca', sans-serif; */
 
@@ -38,84 +33,80 @@
 
 body {
   background-color: var(--color-main-bg);
+  color: var(--color-white);
+  font-family: "Inter", sans-serif;
   font-size: 15px;
-  line-height: 1.5;
 }
 
 main {
-  padding: 1em;
   display: grid;
-  justify-items: center;
-  padding: 1rem;
+  padding: 1em;
+  place-items: center;
 }
 
 .card {
   background-color: var(--color-card-bg);
   border-radius: 1rem;
-  color: var(--color-white);
   max-width: 375px;
   overflow: hidden;
-  padding-bottom: 2em;
 }
 
-.card picture {
-  position: relative;
+.card-picture {
+  position: relative; 
 }
 
-/* .card picture::before {
-  content: "";
-  position: absolute;
-  inset: 0;
+.card-picture::after {
   background-color: var(--color-accent);
-  opacity: 0.4;
-} */
+  content: "";
+  inset: 0;
+  opacity: 0.6;
+  position: absolute;
+}
 
-.card h2 {
+.card-heading {
+  font-size: 1.777em;
+  margin-block: 2rem 1rem;
+  margin-inline: auto;
   max-width: 15ch;
   text-align: center;
-  font-family: 'Inter', sans-serif;
-  font-weight: 700;
-  margin: 2rem auto 1rem;
 }
 
-.card h2 span {
+.card-heading span {
   color: var(--color-accent);
 }
 
-.card p {
-  max-width: 29ch;
-  text-align: center;
-  font-family: 'Inter', sans-serif;
-  font-weight: 400;
+.card-paragraph {
   color: var(--color-white-main-paragraph);
   margin-inline: auto;
-}
-
-.stat-headings {
-  display: grid;
-  justify-content: center;
-  gap: 1rem;
+  max-width: 29ch;
   text-align: center;
-  align-items: start;
-  margin-top: 1rem;
 }
 
-.stat-headings h2 {
-  font-family: 'Inter', sans-serif;
-  margin: 1rem 0 0;
+.card-stats {
+  display: grid;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-block: 2rem;
+  text-align: center;
 }
 
-.stat-headings span {
-  text-transform: uppercase;
-  /* font-family: 'Lexend Deca', sans-serif; */
-  font-family: 'Inter', sans-serif;
+.card-stats div {
+  display: grid;
+  gap: 0.3rem;
+}
 
+.card-stats span {
   color: var(--color-white-stat-headings);
-  font-size: 0.5em;
+  font-family: "Lexend Deca", sans-serif;
+  text-transform: uppercase;
 }
-
 
 /* Attribution styles. */
 
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+.attribution {
+  text-align: center;
+  font-size: 11px;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
