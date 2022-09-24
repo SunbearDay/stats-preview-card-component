@@ -26,6 +26,10 @@
   margin: 0;
 }
 
+:is(html, body) {
+  height: 100%;
+}
+
 :is(img, picture) {
   display: block;
   max-width: 100%;
@@ -42,6 +46,7 @@ main {
   display: grid;
   padding: 1em;
   place-items: center;
+  min-height: 100%;
 }
 
 .card {
@@ -49,10 +54,11 @@ main {
   border-radius: 1rem;
   max-width: 375px;
   overflow: hidden;
+  display: grid;
 }
 
 .card-picture {
-  position: relative; 
+  position: relative;
 }
 
 .card-picture::after {
@@ -100,6 +106,57 @@ main {
   font-family: "Lexend Deca", sans-serif;
   text-transform: uppercase;
 }
+
+@media (min-width: 1200px) {
+  .card {
+    grid-template-columns: 1fr 1fr;
+    min-width: 1000px;
+  }
+
+  .card-main {
+    grid-area: 1 / 1;
+    min-width: 500px;
+  }
+
+  .card-heading {
+    font-size: 2.4em;
+    margin-block: 4rem 1rem;
+    margin-inline: 4rem 0;
+    max-width: 18ch;
+    text-align: left;
+
+  }
+  
+  .card-paragraph {
+    color: var(--color-white-main-paragraph);
+    margin-inline: 4rem 0;
+    max-width: 40ch;
+    text-align: left;
+  }
+
+  .card-stats {
+    display: flex;
+    gap: 3rem;
+    justify-content: start;
+    margin-block: 4rem 0;
+    margin-inline: 4rem 0;
+    text-align: left;
+  }
+  
+  .card-stats div {
+    display: grid;
+    gap: 0.3rem;
+  }
+  
+  .card-stats span {
+    color: var(--color-white-stat-headings);
+    font-family: "Lexend Deca", sans-serif;
+    text-transform: uppercase;
+  }
+  
+  
+}
+
 
 /* Attribution styles. */
 
